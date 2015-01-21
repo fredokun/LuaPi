@@ -20,11 +20,7 @@ low-level stuff. It also provides an implicit cooperation model so that explicit
 
 ## INSTALLATION ##
 
-There is no installation procedure per-se. The only "difficult" part is in expanding
-the archive, which may look like the following one any Linux/Unix/Mingw/Cygwin/MacOSX environment:
-
-
-    > tar xvzf LuaPi-<VERSION>.tar.gz
+There is no installation procedure per-se. A LuaRock should be created at some point.
 
 To check the library, you can try the (few) provided examples:
 
@@ -50,7 +46,7 @@ at some point.
    `lib/` : the library file(s)
    `lib/pi.lua` : the main LuaPi module
    `examples/` : largely commented examples
-   `prepare.sh` : to test LuaContractor (see INSTALLATION just above)
+   `prepare.sh` : to try LuaPi in the repo (cf.
 
 ## DOCUMENTATION ##
 
