@@ -6,17 +6,22 @@ LuaPi: Concurrent programming made simple
 
 ## OVERVIEW ##
 
-LuaPi is a concise and efficient implementation of the Pi-calculus and broadcast-Pi semantics
+LuaPi is a concise and efficient library for concurrent programming in the Lua language.
 The metaphor employed is that of communicating systems. A LuaPi agent (there should generally
- be one LuaPi agent per lua instance) runs a set of LuaPi processes in parallel.
+ be one LuaPi agent per lua instance) runs a set of LuaPi concurrent processes.
 Processes communicate through send/receive or broadcast primitives using communication channels. 
+Channels can also be passed around, allowing higher-order concurrent communication.
 A higher-level and quite expressive choice construct allows to implement guarded commands, 
-select-like behaviors and much more.
+select-like behaviors and much more. Technically-speaking, LuaPi is an outcome of a research
+work about the efficient implementation of the pi-calculus. LuaPi also implement extensions
+ to the basic Pi-calculus: broadcast channels and join patterns.
 
 From a practical point of view, LuaPi greatly simplifies the thinking and programming of concurrent
  behaviors, here in the Lua language. A more Lua-specific aspect is that LuaPi offers an expressive
 (but thin) layer above the coroutine mechanism so that programmers do not have to deal with the 
 low-level stuff. It also provides an implicit cooperation model so that explicit yield are barely needed.
+Although the scheduler can theoretically be parallelized, since Lua does not support OS-level threads this
+ is also a limitation of LuaPi.
 
 ## INSTALLATION ##
 
