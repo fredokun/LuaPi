@@ -1,18 +1,8 @@
 LuaPi: Concurrent programming made simple
 -----
 
-(C) 2007-2009 by Frederic Peschanski under the MIT Licence
+(C) 2007-2015 by Frederic Peschanski under the MIT Licence
 (see COPYRIGHT file)
-
-AUTHOR
--------
-
-Frederic Peschanski
-Assistant Professor
-University of Paris 6 - Pierre et Marie Curie
-France
-
-web: http://www-poleia.lip6.fr/~pesch
 
 OVERVIEW
 --------
@@ -28,11 +18,6 @@ From a practical point of view, LuaPi greatly simplifies the thinking and progra
  behaviors, here in the Lua language. A more Lua-specific aspect is that LuaPi offers an expressive
 (but thin) layer above the coroutine mechanism so that programmers do not have to deal with the 
 low-level stuff. It also provides an implicit cooperation model so that explicit yield are barely needed.
-
-From a scientific point of view, LuaPi is an outcome of our (long-term) research effort of providing 
-integrated modeling, verification and programming techniques for day-to-day programmers (see LINKS).
-For example, LuaPi programs (well, the concurrent parts) can be converted to the Promela syntax and thus 
-verified using Spin (see the doc/spin/ subdirectory for a tutorial example)
 
 INSTALLATION
 ------------
@@ -73,19 +58,3 @@ DOCUMENTATION
 
 LuaPi tutorial:
 see doc/tutorial/LuaPiTut-<VERSION>.pdf
-
-CONTACT
--------
-
-Please use the project page on LuaForge (or author homepage)
-
-LINKS
------
-
-- LuaPi home page: http://luapi.luaforge.net
-
-- Lua home page:  http://www.lua.org
-- LuaForge projects: http://www.luaforge.net
-
-- Personal home page: http://www-poleia.lip6.fr/~pesch
-  - research work: http://www-poleia.lip6.fr/~pesch/pithreads
