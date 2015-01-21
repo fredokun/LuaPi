@@ -4,8 +4,7 @@ LuaPi: Concurrent programming made simple
 (C) 2007-2015 by Frederic Peschanski under the MIT Licence
 (see COPYRIGHT file)
 
-OVERVIEW
-========
+## OVERVIEW ##
 
 LuaPi is a concise and efficient implementation of the Pi-calculus and broadcast-Pi semantics
 The metaphor employed is that of communicating systems. A LuaPi agent (there should generally
@@ -19,8 +18,7 @@ From a practical point of view, LuaPi greatly simplifies the thinking and progra
 (but thin) layer above the coroutine mechanism so that programmers do not have to deal with the 
 low-level stuff. It also provides an implicit cooperation model so that explicit yield are barely needed.
 
-INSTALLATION
-============
+## INSTALLATION ##
 
 There is no installation procedure per-se. The only "difficult" part is in expanding
 the archive, which may look like the following one any Linux/Unix/Mingw/Cygwin/MacOSX environment:
@@ -40,23 +38,22 @@ To check the library, you can try the (few) provided examples:
 Most examples are (or will be) thoroughly commented, and further documentation should happen
 at some point.
 
-CONTENTS
-=========
+## CONTENTS ##
 
-LuaPi-<VERSION>/  :  main directory
-   README : this file
-   HISTORY : the history of versions
-   COPYRIGHT : our rights (and few duties)
-   VERSION : the current version
-   AUTHORS : the authors of the software
-   doc/ : tutorial and reference documentation
-   lib/ : the library file(s)
-   lib/pi.lua : the main LuaPi module
-   examples/ : largely commented examples
-   prepare.sh : to test LuaContractor (see INSTALLATION just above)
+`LuaPi-<VERSION>/`  :  main directory
+   `README` : this file
+   `HISTORY` : the history of versions
+   `COPYRIGHT` : our rights (and few duties)
+   `VERSION` : the current version
+   `AUTHORS` : the authors of the software
+   `doc/` : tutorial and reference documentation
+   `lib/` : the library file(s)
+   `lib/pi.lua` : the main LuaPi module
+   `examples/` : largely commented examples
+   `prepare.sh` : to test LuaContractor (see INSTALLATION just above)
 
-DOCUMENTATION
-=============
+## DOCUMENTATION ##
 
 LuaPi tutorial:
-see doc/tutorial/LuaPiTut-<VERSION>.pdf
+
+see `doc/tutorial/LuaPiTut-<VERSION>.pdf`
