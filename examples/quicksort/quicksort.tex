@@ -1,0 +1,48 @@
+
+\documentclass{article}
+
+\usepackage{tikz}
+
+\begin{document}
+  \title{Parallel quicksort : example}
+  \author{Frederic Peschanski}
+
+  \maketitle
+
+\section*{Step 1 : starting configuration}
+
+\input{01-quicksort_init.pgf}
+
+\section*{Step 2 : $2$ outputs on $link$  to $3$}
+
+\input{02-quicksort_2-link-3.pgf}
+
+\section*{Step 3 : $1$ outputs on $link$  to $3$}
+
+\input{03-quicksort_1-link-3.pgf}
+
+\section*{Step 4 : $4$ outputs on $link$  to $3$}
+
+\input{04-quicksort_4-link-3.pgf}
+
+\section*{Step 5 : $5$ outputs on $link$  to $3$}
+
+\input{05-quicksort_5-link-3.pgf}
+
+\section*{Step 6 : $1$ outputs on $link$  to $2$}
+
+\input{06-quicksort_1-link-2.pgf}
+
+\section*{Step 7 : $7$ outputs on $link$  to $3$}
+
+\input{07-quicksort_7-link-3.pgf}
+
+\section*{Etc ...}
+
+\textbf{Remark} :  for termination, needs a $head$ process
+ that is signaled each time a $link$ is destroyed, and the
+ $before/after$ relation  (at least $after$) must also cover
+ the $head$.
+
+
+\end{document}

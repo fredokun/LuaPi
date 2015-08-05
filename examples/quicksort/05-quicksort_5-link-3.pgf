@@ -1,0 +1,16 @@
+\begin{tikzpicture}[node distance=60pt]
+\node [shape=rectangle, draw] (N2) {$2$};
+\node [shape=rectangle, draw, below of=N2, node distance=120pt] (N3) {$3$};
+\node [shape=rectangle, below of=N3, draw, node distance=120pt] (N4) {$4$};
+\node [shape=circle, right of=N4, draw] (N5) {$5$};
+\node [shape=circle, right of=N2, draw] (N1) {$1$};
+\node [shape=circle, right of=N3, draw] (N7) {$7$};
+
+\draw[->] (N4) to [out=180, in=-180] node [midway, above] {before} (N3);
+\draw[->] (N3) to [out=-120, in=120] node [midway, right] {after} (N4);
+\draw[->] (N2) to [out=-120, in=120] node [midway, right] {after} (N3);
+\draw[->] (N3) to [out=180, in=-180] node [midway, left] {before} (N2);
+\draw[->] (N5) to [out=135, in=40] node [midway, above] {link} (N4);
+\draw[->] (N1) to [out=180, in=0] node [midway, above] {link} (N2);
+\draw[->] (N7) to [out=135, in=85] node [midway, above] {link} (N3);
+\end{tikzpicture}

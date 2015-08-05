@@ -1,0 +1,14 @@
+\begin{tikzpicture}[node distance=60pt]
+\node [shape=rectangle, draw] (N3) {$3$};
+\node [shape=circle, right of=N3, draw] (N2) {$2$};
+\node [shape=circle, right of=N2, draw] (N5) {$5$};
+\node [shape=circle, right of=N5, draw] (N4) {$4$};
+\node [shape=circle, right of=N4, draw] (N1) {$1$};
+\node [shape=circle, right of=N1, draw] (N7) {$7$};
+
+\draw[->] (N2) -- (N3) node [midway, above] {link};
+\draw[->] (N5) to [out=135, in=40] node [midway, above] {link} (N3);
+\draw[->] (N4) to [out=135, in=55] node [midway, above] {link} (N3);
+\draw[->] (N1) to [out=135, in=70] node [midway, above] {link} (N3);
+\draw[->] (N7) to [out=135, in=85] node [midway, above] {link} (N3);
+\end{tikzpicture}
