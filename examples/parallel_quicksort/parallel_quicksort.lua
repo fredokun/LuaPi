@@ -33,25 +33,26 @@ function Head(proc, nb_links, unlink)
 end
 
 function Pivot(proc, head, prev_, self_, next_, link, val)
-   --print("<Pivot> started: val=" .. tostring(val) .. " (link=" .. tostring(link) .. ")")
+   print("<Pivot> started: val=" .. tostring(val) .. " (link=" .. tostring(link) .. ")")
    while true do
       proc:choice(
          { link:receive(),
            function(link_val)
+              print("<Pivot" ..tostring(val) .. "> link from " ..tostring(link_val))
               if link_val <= val then
                  if prev_ == nil then -- new smaller pivot
-                    local prev_self_ = proc:new("self")
+                    prev_ = proc:new("self")
                     local prev_link = proc:new("link")
-                    proc:send(head, prev_self_) -- tell the head there is a new smallest pivot
-                    proc:spawn("Pivot", Pivot, head, nil, prev_self_, self_, prev_link, link_val)
+                    proc:send(head, prev_) -- tell the head there is a new smallest pivot
+                    proc:spawn("Pivot", Pivot, head, nil, prev_, self_, prev_link, link_val)
                  else
                     proc:send(prev_, 'link', link_val) -- the previous pivot manage this link
                  end
               elseif next_ == nil then -- new greater pivot
                  proc:signal(head)
-                 local next_self_ = proc:new("self")
+                 next_ = proc:new("self")
                  local next_link = proc:new("link")
-                 proc:spawn("Pivot", Pivot, head, self_, next_self_, nil, next_link, link_val)
+                 proc:spawn("Pivot", Pivot, head, self_, next_, nil, next_link, link_val)
               else
                  proc:send(next_, 'link', link_val) -- the next pivot manage this link
               end
@@ -59,6 +60,7 @@ function Pivot(proc, head, prev_, self_, next_, link, val)
          },
          { self_:receive(),
            function(cmd, link_val)
+             print("<Pivot" ..tostring(val) .. "> self cmd='" ..tostring(cmd) .. "' link_val=" ..tostring(link_val))
              if cmd == 'link' then
                  proc:spawn("Candidate", Candidate, link, link_val)
               elseif cmd == 'print' then
