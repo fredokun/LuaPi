@@ -16,7 +16,7 @@ MIN = tonumber(arg and arg[2]) or 1
 MAX = tonumber(arg and arg[3]) or LENGTH
 
 function Head(proc, nb_links, unlink)
-   print("<Head> started: " .. tostring(nb_links) .. " candidates (unlink=" .. tostring(unlink) .. ")")
+   --print("<Head> started: " .. tostring(nb_links) .. " candidates (unlink=" .. tostring(unlink) .. ")")
    local nb_unlinked = 0
    local first_pivot = nil
    for i = 1, nb_links do
@@ -33,12 +33,12 @@ function Head(proc, nb_links, unlink)
 end
 
 function Pivot(proc, head, prev_, self_, next_, link, val)
-   print("<Pivot> started: val=" .. tostring(val) .. " (link=" .. tostring(link) .. ")")
+   --print("<Pivot> started: val=" .. tostring(val) .. " (link=" .. tostring(link) .. ")")
    while true do
       proc:choice(
          { link:receive(),
            function(link_val)
-              print("<Pivot" ..tostring(val) .. "> link from " ..tostring(link_val))
+              --print("<Pivot" ..tostring(val) .. "> link from " ..tostring(link_val))
               if link_val <= val then
                  if prev_ == nil then -- new smaller pivot
                     prev_ = proc:new("self")
@@ -65,7 +65,7 @@ function Pivot(proc, head, prev_, self_, next_, link, val)
          },
          { self_:receive(),
            function(cmd, value)
-              print("<Pivot" ..tostring(val) .. "> self cmd='" ..tostring(cmd) .. "' value=" ..tostring(value))
+              --print("<Pivot" ..tostring(val) .. "> self cmd='" ..tostring(cmd) .. "' value=" ..tostring(value))
               if cmd == 'link_from_next' then
                  local link_val = value
                  if link_val >= val then
@@ -122,7 +122,7 @@ function Pivot(proc, head, prev_, self_, next_, link, val)
 end
 
 function Candidate(proc, link, val)
-   print("<Candidate> started: val = " ..tostring(val) .. " (link=" .. tostring(link) .. ")")
+   --print("<Candidate> started: val = " ..tostring(val) .. " (link=" .. tostring(link) .. ")")
    proc:yield()
    proc:send(link, val)   -- and that's it !
    proc:yield()
