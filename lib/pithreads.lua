@@ -58,11 +58,11 @@ local function makeProcess(iagent,name,fun,...)
                  broadcast=broadcast,bcast=broadcast,speak=broadcast,talk=broadcast,
                  collect=collect,
                  join=Join.join,
-                 new=function(proc,...) 
-                       return proc.agent:new(...) 
-                     end, 
-                 spawn=function(proc,...) 
-                         return proc.agent:spawn(...) 
+                 new=function(proc,...)
+                       return proc.agent:new(...)
+                     end,
+                 spawn=function(proc,...)
+                         return proc.agent:spawn(...)
                        end,
                  yield=yieldProcess}
   local procMT = { __tostring = processToString }
@@ -414,7 +414,7 @@ function Choice.try(proc,...)
         while choice.chan.broadcasting~=nil or choice.chan.outjoin~=nil do
           yieldProcess(proc)
         end
-        -- first try to resolve the choice    
+        -- first try to resolve the choice
         local commit = lookupCommitment(proc,choice.chan.incommits)
         --DEBUG(proc,"Choice matches with input commitment: "..tostring(commit))
         if commit~=nil then
